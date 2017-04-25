@@ -34,10 +34,10 @@
 <tspan x="10" y="506">    ├─┬ nopt@3.0.6 </tspan>
 <tspan x="10" y="522">    │ └── abbrev@1.1.0 </tspan>
 <tspan x="10" y="538">    ├─┬ npmlog@4.0.2 </tspan>
-<tspan x="10" y="554">    │ ├─┬ are-we-there-yet@1.1.2 </tspan>
+<tspan x="10" y="554">    │ ├─┬ are-we-there-yet@1.1.4 </tspan>
 <tspan x="10" y="570">    │ │ └── delegates@1.0.0 </tspan>
 <tspan x="10" y="586">    │ ├── console-control-strings@1.1.0 </tspan>
-<tspan x="10" y="602">    │ ├─┬ gauge@2.7.3 </tspan>
+<tspan x="10" y="602">    │ ├─┬ gauge@2.7.4 </tspan>
 <tspan x="10" y="618">    │ │ ├── aproba@1.1.1 </tspan>
 <tspan x="10" y="634">    │ │ ├── has-unicode@2.0.1 </tspan>
 <tspan x="10" y="650">    │ │ ├── object-assign@4.1.1 </tspan>
