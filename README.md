@@ -1,6 +1,6 @@
 # npmdoc-ttf2woff2
 
-#### api documentation for  [ttf2woff2 (v2.0.3)](https://github.com/nfroidure/ttf2woff2)  [![npm package](https://img.shields.io/npm/v/npmdoc-ttf2woff2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ttf2woff2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ttf2woff2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ttf2woff2)
+#### basic api documentation for  [ttf2woff2 (v2.0.3)](https://github.com/nfroidure/ttf2woff2)  [![npm package](https://img.shields.io/npm/v/npmdoc-ttf2woff2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ttf2woff2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ttf2woff2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ttf2woff2)
 
 #### Convert TTF files to WOFF2 ones.
 
@@ -21,51 +21,23 @@
 ```json
 
 {
-    "name": "ttf2woff2",
-    "version": "2.0.3",
-    "description": "Convert TTF files to WOFF2 ones.",
-    "main": "src/index.js",
+    "author": {
+        "name": "Nicolas Froidure"
+    },
+    "bin": {
+        "ttf2woff2": "bin/ttf2woff2.js"
+    },
     "browser": "jssrc/index.js",
-    "engines": {
-        "node": ">=0.12"
-    },
-    "directories": {
-        "test": "tests"
-    },
-    "scripts": {
-        "test": "mocha tests/*.mocha.js",
-        "coveralls": "istanbul cover _mocha --report lcovonly -- tests/*.mocha.js -R spec -t 5000 && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
-        "cover": "istanbul cover --report html _mocha -- tests/*.mocha.js -R spec -t 5000",
-        "cli": "env NPM_RUN_CLI=1",
-        "configure": "node-gyp configure",
-        "lint": "eslint src/*.js tests/*.src jssrc/index.js",
-        "preversion": "npm run lint && npm test",
-        "make": "node-gyp build",
-        "emcc": "miniquery -p \"targets.#.sources.#\" ./binding.gyp | grep -v \"csrc/addon.cc\" | xargs emcc --bind -o jssrc/ttf2woff2.js -O3 --memory-init-file 0 -s \"TOTAL_MEMORY=536870912\" -s \"ALLOW_MEMORY_GROWTH=1\" --post-js jssrc/post.js csrc/fallback.cc",
-        "emcc-debug": "miniquery -p \"targets.#.sources.#\" ./binding.gyp | grep -v \"csrc/addon.cc\" | xargs emcc --bind -o jssrc/ttf2woff2.js -s \"ALLOW_MEMORY_GROWTH=1\" -s \"ASSERTIONS=1\" --post-js jssrc/post.js csrc/fallback.cc",
-        "install": "(node-gyp rebuild > builderror.log) || (exit 0)"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:nfroidure/ttf2woff2.git"
-    },
-    "keywords": [
-        "ttf",
-        "woff2",
-        "fonts"
-    ],
-    "author": "Nicolas Froidure",
-    "license": "MIT",
     "bugs": {
         "url": "https://github.com/nfroidure/ttf2woff2/issues"
     },
-    "homepage": "https://github.com/nfroidure/ttf2woff2",
     "dependencies": {
         "bindings": "^1.2.1",
         "bufferstreams": "^1.1.0",
         "nan": "^2.1.0",
         "node-gyp": "^3.0.3"
     },
+    "description": "Convert TTF files to WOFF2 ones.",
     "devDependencies": {
         "coveralls": "^2.11.4",
         "eslint": "^1.4.1",
@@ -75,11 +47,52 @@
         "mocha": "^2.3.2",
         "mocha-lcov-reporter": "^0.0.2"
     },
-    "preferGlobal": "true",
-    "bin": {
-        "ttf2woff2": "bin/ttf2woff2.js"
+    "directories": {
+        "test": "tests"
     },
-    "gypfile": true
+    "dist": {
+        "shasum": "5e020afe6e643287f3ad7687abed20fe654eb329",
+        "tarball": "https://registry.npmjs.org/ttf2woff2/-/ttf2woff2-2.0.3.tgz"
+    },
+    "engines": {
+        "node": ">=0.12"
+    },
+    "gitHead": "3a43adcd9fefd6e4539fb133a3b82b4ec7978eca",
+    "gypfile": true,
+    "homepage": "https://github.com/nfroidure/ttf2woff2",
+    "keywords": [
+        "ttf",
+        "woff2",
+        "fonts"
+    ],
+    "license": "MIT",
+    "main": "src/index.js",
+    "maintainers": [
+        {
+            "name": "nfroidure"
+        }
+    ],
+    "name": "ttf2woff2",
+    "optionalDependencies": {},
+    "preferGlobal": "true",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/nfroidure/ttf2woff2.git"
+    },
+    "scripts": {
+        "cli": "env NPM_RUN_CLI=1",
+        "configure": "node-gyp configure",
+        "cover": "istanbul cover --report html _mocha -- tests/*.mocha.js -R spec -t 5000",
+        "coveralls": "istanbul cover _mocha --report lcovonly -- tests/*.mocha.js -R spec -t 5000 && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+        "emcc": "miniquery -p \"targets.#.sources.#\" ./binding.gyp | grep -v \"csrc/addon.cc\" | xargs emcc --bind -o jssrc/ttf2woff2.js -O3 --memory-init-file 0 -s \"TOTAL_MEMORY=536870912\" -s \"ALLOW_MEMORY_GROWTH=1\" --post-js jssrc/post.js csrc/fallback.cc",
+        "emcc-debug": "miniquery -p \"targets.#.sources.#\" ./binding.gyp | grep -v \"csrc/addon.cc\" | xargs emcc --bind -o jssrc/ttf2woff2.js -s \"ALLOW_MEMORY_GROWTH=1\" -s \"ASSERTIONS=1\" --post-js jssrc/post.js csrc/fallback.cc",
+        "install": "(node-gyp rebuild > builderror.log) || (exit 0)",
+        "lint": "eslint src/*.js tests/*.src jssrc/index.js",
+        "make": "node-gyp build",
+        "preversion": "npm run lint && npm test",
+        "test": "mocha tests/*.mocha.js"
+    },
+    "version": "2.0.3"
 }
 ```
 
